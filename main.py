@@ -105,7 +105,7 @@ def call_to_doctors(button_text, data):
                 }
                 print(params)   
                 # Make API call
-                response = requests.post(st.secrets["API_URL"], json=params)
+                response = requests.post(st.secrets["API_URL_CALL"], json=params)
                 result = response.json()
                 
                 if result.get('status') == 'success':
@@ -129,7 +129,7 @@ def get_voice_files():
     }
     
     try:
-        response = requests.post("https://api.binotel.com/api/4.0/settings/list-of-voice-files.json", json=params)
+        response = requests.post(st.secrets["API_URL_VOICE_FILES"], json=params)
         result = response.json()
         
         if result.get('status') == 'success':
