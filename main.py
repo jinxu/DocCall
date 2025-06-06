@@ -210,14 +210,15 @@ def display_data(data):
                 phone_numbers = []
                 for row_data in matching_rows.values():
                     phone = row_data.get('phone', '')
+                    name = row_data.get('name', '')  # Get the name from row data
                     if phone:
-                        phone_numbers.append(phone)
+                        phone_numbers.append((phone, name))  # Store both phone and name
                 
                 if phone_numbers:
                     st.markdown('<div class="phone-list">', unsafe_allow_html=True)
                     st.write("### 📞 Номери для дзвінків:")
-                    for phone in phone_numbers:
-                        st.write(f"📱 {phone}")
+                    for phone, name in phone_numbers:
+                        st.write(f"📱 {phone} - {name}")  # Display both phone and name
                     st.markdown('</div>', unsafe_allow_html=True)
             
             if st.session_state.show_results:
