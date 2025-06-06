@@ -2,7 +2,7 @@ import streamlit as st
 import hashlib
 from main import main_app
 
-# Set page config with medical theme
+# Set page config with medical theme - must be first Streamlit command
 st.set_page_config(
     page_title="Система автоматизованих звінків",
     page_icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-roOVatlhWG7nBqVjVOxiEovxvol7IEwzrA&s",

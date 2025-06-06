@@ -3,82 +3,6 @@ import requests
 from google_sheets import get_sheet_data
 import time
 
-# Custom CSS for medical theme
-st.markdown("""
-    <style>
-    .stApp {
-        background-color: #ffffff;
-    }
-    .stButton>button {
-        background-color: #0066cc;
-        color: white;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 16px;
-        border: 1px solid #0052a3;
-    }
-    .stButton>button:hover {
-        background-color: #0052a3;
-    }
-    .success-message {
-        background-color: #1a1a1a;
-        color: white;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 10px 0;
-        border: 1px solid #333;
-    }
-    .phone-list {
-        background-color: #1a1a1a;
-        color: white;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 10px 0;
-        border: 1px solid #333;
-    }
-    h1, h2, h3 {
-        color: #1a1a1a;
-    }
-    .header-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-bottom: 20px;
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 5px;
-    }
-    .header-container h1, .header-container h2 {
-        color: #1a1a1a;
-    }
-    .logo {
-        width: 100px;
-        height: 100px;
-    }
-    .stSuccess {
-        background-color: #1a1a1a !important;
-        color: white !important;
-        border: 1px solid #333 !important;
-    }
-    .stError {
-        background-color: #1a1a1a !important;
-        color: white !important;
-        border: 1px solid #333 !important;
-    }
-    .stWarning {
-        background-color: #1a1a1a !important;
-        color: white !important;
-        border: 1px solid #333 !important;
-    }
-    .stMarkdown {
-        color: #1a1a1a;
-    }
-    .stMarkdown p {
-        color: #1a1a1a;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
 def call_to_doctors(button_text, data):
     """Function to make calls using Binotel API"""
     # Get all rows that have the same button text (before the _index)
@@ -142,6 +66,82 @@ def get_voice_files():
         return {}
 
 def main_app():
+    # Apply custom CSS
+    st.markdown("""
+        <style>
+        .stApp {
+            background-color: #ffffff;
+        }
+        .stButton>button {
+            background-color: #0066cc;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #0052a3;
+        }
+        .stButton>button:hover {
+            background-color: #0052a3;
+        }
+        .success-message {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #333;
+        }
+        .phone-list {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #333;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .header-container h1, .header-container h2 {
+            color: #1a1a1a;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+        .stSuccess {
+            background-color: #1a1a1a !important;
+            color: white !important;
+            border: 1px solid #333 !important;
+        }
+        .stError {
+            background-color: #1a1a1a !important;
+            color: white !important;
+            border: 1px solid #333 !important;
+        }
+        .stWarning {
+            background-color: #1a1a1a !important;
+            color: white !important;
+            border: 1px solid #333 !important;
+        }
+        .stMarkdown {
+            color: #1a1a1a;
+        }
+        .stMarkdown p {
+            color: #1a1a1a;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
     # Header with logo
     st.markdown("""
         <div class="header-container">
